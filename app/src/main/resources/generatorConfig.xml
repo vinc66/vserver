@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <classPathEntry location="D:/mysql-connector-java-5.1.38.jar" />
+    <!-- 配置数据源和生成的代码所存放的位置 -->
+    <context id="context1">
+
+        <commentGenerator>
+            <!-- 避免生成注解 -->
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/add2web" userId="root"
+                        password="root">
+        </jdbcConnection>
+        <!-- 所生成的实体类的位置默认资源包src -->
+        <javaModelGenerator targetPackage="cn.vinc.domain" targetProject="src/main/java" />
+        <!-- 所生成的sqlMap的影射文件的位置,默认资源包src -->
+        <sqlMapGenerator targetPackage="cn.vinc.data.mapper" targetProject="src/main/resources" />
+        <javaClientGenerator targetPackage="cn.vinc.data.mapper" targetProject="src/main/java" type="XMLMAPPER"   />
+        <!-- 为哪些表生成代码 tableName:表名 schema:不用填写 -->
+
+        <table schema="" tableName="t_user" domainObjectName="User" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"
+        />
+    </context>
+</generatorConfiguration>

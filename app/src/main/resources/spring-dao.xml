@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="webDataSource"></property>
+        <property name="typeAliasesPackage" value="cn.vinc.domain"></property>
+    </bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="webDataSource"/>
+    </bean>
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="cn.vinc.data.mapper"/>
+    </bean>
+
+    <bean id="webDataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="${database.driverClassName}"></property>
+        <property name="url" value="${database.url}"></property>
+        <property name="username" value="${database.username}"></property>
+        <property name="password" value="${database.password}"></property>
+        <!--maxActive: 最大连接数量-->
+        <property name="maxActive" value="${database.maxActive}"/>
+        <!--minIdle: 最小空闲连接-->
+        <property name="minIdle" value="${database.minIdle}"/>
+        <!--maxIdle: 最大空闲连接-->
+        <property name="maxIdle" value="${database.maxIdle}"/>
+        <!--initialSize: 初始化连接-->
+        <property name="initialSize" value="${database.initialSize}"/>
+        <!--maxWait: 超时等待时间以毫秒为单位 1000等于60秒-->
+        <property name="maxWait" value="${database.maxWait}"/>
+        <!-- 在空闲连接回收器线程运行期间休眠的时间值,以毫秒为单位. -->
+        <property name="timeBetweenEvictionRunsMillis" value="${database.timeBetweenEvictionRunsMillis}"/>
+        <!--  在每次空闲连接回收器线程(如果有)运行时检查的连接数量 -->
+        <property name="numTestsPerEvictionRun" value="${database.numTestsPerEvictionRun}"/>
+        <!-- 1000 * 60 * 30  连接在池中保持空闲而不被空闲连接回收器线程-->
+        <property name="minEvictableIdleTimeMillis" value="${database.minEvictableIdleTimeMillis}"/>
+    </bean>
+
+    <!--<bean id="webtransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
+        <!--<property name="dataSource" ref="webDataSource"/>-->
+    <!--</bean>-->
+
+    <!--<aop:config>-->
+        <!--<aop:advisor advice-ref="webtxAdvice" pointcut="execution(* cn.vinc.service.*.*(..))"/>-->
+    <!--</aop:config>-->
+
+    <!--<tx:advice id="webtxAdvice" transaction-manager="webtransactionManager">-->
+        <!--<tx:attributes>-->
+            <!--<tx:method name="add*"/>-->
+            <!--<tx:method name="save*"/>-->
+            <!--<tx:method name="update*"/>-->
+            <!--<tx:method name="delete*"/>-->
+            <!--<tx:method name="*" read-only="true"/>-->
+        <!--</tx:attributes>-->
+    <!--</tx:advice>-->
+
+
+
+</beans>
