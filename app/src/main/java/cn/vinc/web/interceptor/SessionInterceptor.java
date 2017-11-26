@@ -1,4 +1,4 @@
-package cn.vinc.web.Interceptor;
+package cn.vinc.web.interceptor;
 
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 

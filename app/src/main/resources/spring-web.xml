@@ -30,7 +30,7 @@
         <!--<mvc:interceptor>-->
             <!--<mvc:mapping patcooluser/**"/>-->
             <!--<mvc:mapping path="/admin/**"/>-->
-            <!--<bean class="cn.vinc.web.Interceptor.SessionInterceptor"/>-->
+            <!--<bean clacn.vinc.web.interceptorptor.SessionInterceptor"/>-->
         <!--</mvc:interceptor>-->
     <!--</mvc:interceptors>-->
 
