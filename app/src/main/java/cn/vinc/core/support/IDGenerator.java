@@ -18,4 +18,10 @@ public final class IDGenerator {
         }
         return Hashing.murmur3_32().hashString(id, Charset.defaultCharset()).asInt();
     }
+
+    public static int generateID() {
+       return generate(generate());
+    }
+
+
 }

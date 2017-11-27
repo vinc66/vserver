@@ -53,6 +53,11 @@ public class ResVo<T> {
         return this;
     }
 
+
+    public ResVo buildError() {
+        this.error_code = -1;
+        return this;
+    }
     public ResVo buildError(int fail) {
         this.error_code = fail;
         return this;

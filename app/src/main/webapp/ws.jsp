@@ -17,7 +17,7 @@ Welcome<br/><input id="text" type="text"/>
     var websocket = null;
     //判断当前浏览器是否支持WebSocket
     if ('WebSocket' in window) {
-        websocket = new WebSocket("ws://localhost:8080/ws");
+        websocket = new WebSocket("ws://127.0.0.1:8080/ws");
     }else {
         alert('当前浏览器 Not support websocket')
     }
