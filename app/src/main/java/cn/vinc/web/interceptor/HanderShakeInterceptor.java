@@ -65,21 +65,20 @@ public class HanderShakeInterceptor extends HttpSessionHandshakeInterceptor {
 
     @Override
     public boolean beforeHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler, Map<String, Object> attributes) throws Exception {
-        log.info("------beforeHandshake------");
         HttpServletRequest servletRequest = ((ServletServerHttpRequest) request).getServletRequest();
         String uid = CookieUtil.getUid(servletRequest, Constants.ACCOUNT_ID);
         String rid = servletRequest.getParameter("rid");
-        if (StringUtils.isBlank(uid) || StringUtils.isBlank(rid))
+        if (StringUtils.isBlank(uid))
             return false;
+        if(StringUtils.isBlank(rid))
+            rid = "1";
         attributes.put("uid", IDGenerator.generate(uid));
         attributes.put("rid", rid);
         return true;
-//        return super.beforeHandshake(request, response, wsHandler, attributes);
     }
 
     @Override
     public void afterHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler, Exception ex) {
-        log.info("------afterHandshake------");
         super.afterHandshake(request, response, wsHandler, ex);
     }
 }

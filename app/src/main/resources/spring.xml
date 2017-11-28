@@ -29,7 +29,7 @@
     <util:properties id="kaptchaConfig" location="classpath:kaptcha-config.properties"/>
 
     <import resource="spring-endpoint.xml"/>
-    <import resource="spring-dao.xml"/>
+    <!--<import resource="spring-dao.xml"/>-->
     <import resource="spring-redis.xml"/>
 
 </beans>

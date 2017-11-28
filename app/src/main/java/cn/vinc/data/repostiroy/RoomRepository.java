@@ -21,9 +21,12 @@ public class RoomRepository {
     private StringRedisTemplate redisTemplate;
 
 
+    public static final String ROOM_LIST_PREFIX = "cool:list:";
     public static final String ROOM_PREFIX = "cool:room:";
     public static final String ROOM_MSG_PREFIX = "cool:room:msg:";
     public static final String ROOM_USER_PREFIX = "cool:room:user:";
+
+    public static final Integer DEFAULT_OLD = 10;
 
     public void set(Room room) {
         redisTemplate.opsForValue().set(ROOM_PREFIX + room.getRid(), JSON.toJSONString(room));
@@ -38,19 +41,22 @@ public class RoomRepository {
     }
 
     public List<String> msgGet(int rrid) {
-        return redisTemplate.opsForList().range(ROOM_MSG_PREFIX + rrid, 0, 20);
+        return redisTemplate.opsForList().range(ROOM_MSG_PREFIX + rrid, 0, DEFAULT_OLD);
     }
 
     public void addUser(int rrid, User user) {
         redisTemplate.opsForZSet().add(ROOM_USER_PREFIX + rrid, JSON.toJSONString(user), user.getId());
     }
 
-    public void listUser(int rrid) {
-        redisTemplate.opsForZSet().range(ROOM_USER_PREFIX + rrid, 0, -1);
+    public Set<String> listUser(int rrid) {
+        return redisTemplate.opsForZSet().range(ROOM_USER_PREFIX + rrid, 0, -1);
     }
 
+    public Set<String> list() {
+        return redisTemplate.opsForZSet().range(ROOM_LIST_PREFIX, 0, -1);
+    }
 
-    public void removeUser(int rrid, User user) {
-
+    public void add2List(int rid, String rname) {
+        redisTemplate.opsForZSet().add(ROOM_LIST_PREFIX, rid + "_" + rname, rid);
     }
 }

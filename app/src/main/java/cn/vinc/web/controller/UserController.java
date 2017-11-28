@@ -28,21 +28,9 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 @RequestMapping("api/user")
 public class UserController {
-//    @Autowired
-//    private UserService userService;
+
     @Autowired
     private UserRepository userRepository;
-
-    @RequestMapping(value = "/get")
-    @ResponseBody
-    public ResVo get() {
-        User first = userRepository.get(1);
-//        if (first == null) {
-//            first = userService.getFirst(1);
-//            userRepository.set(first);
-//        }
-        return new ResVo<>().setData(first);
-    }
 
     @RequestMapping(value = "/auth")
     @ResponseBody
@@ -63,14 +51,10 @@ public class UserController {
         }
         int generate = IDGenerator.generate(uid);
         User user = userRepository.get(generate);
-        log.info(JSON.toJSONString(user));
         if (user == null) {
             CookieUtil.removeCookie(response, uid);
             return new ResVo().buildError(-1);
         }
         return new ResVo().setData(user);
     }
-
-
-
 }

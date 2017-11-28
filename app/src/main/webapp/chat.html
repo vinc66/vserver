@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Matrix Admin</title>
+    <title>chat</title>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -53,61 +53,13 @@
 </div>
 <div id="sidebar">
     <ul>
-        <li><a href="index.html"><i class="icon icon-home"></i> <span>+</span></a></li>
-        <li><a href="charts.html"><i class="icon icon-signal"></i> <span>Charts &amp; graphs</span></a></li>
-        <li><a href="widgets.html"><i class="icon icon-inbox"></i> <span>Widgets</span></a></li>
-        <li><a href="tables.html"><i class="icon icon-th"></i> <span>Tables</span></a></li>
-        <li><a href="grid.html"><i class="icon icon-fullscreen"></i> <span>Full width</span></a></li>
-        <li class="submenu"><a href="#"><i class="icon icon-th-list"></i> <span>Forms</span> <span
-                class="label label-important">3</span></a>
-            <ul>
-                <li><a href="form-common.html">Basic Form</a></li>
-                <li><a href="form-validation.html">Form with Validation</a></li>
-                <li><a href="form-wizard.html">Form with Wizard</a></li>
-            </ul>
-        </li>
-        <li><a href="buttons.html"><i class="icon icon-tint"></i> <span>Buttons &amp; icons</span></a></li>
-        <li><a href="interface.html"><i class="icon icon-pencil"></i> <span>Eelements</span></a></li>
-        <li class="submenu active"><a href="#"><i class="icon icon-file"></i> <span>Addons</span> <span
-                class="label label-important">5</span></a>
-            <ul>
-                <li><a href="index2.html">Dashboard2</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="calendar.html">Calendar</a></li>
-                <li><a href="invoice.html">Invoice</a></li>
-                <li><a href="chat.html">Chat option</a></li>
-            </ul>
-        </li>
-        <li class="submenu"><a href="#"><i class="icon icon-info-sign"></i> <span>Error</span> <span
-                class="label label-important">4</span></a>
-            <ul>
-                <li><a href="error403.html">Error 403</a></li>
-                <li><a href="error404.html">Error 404</a></li>
-                <li><a href="error405.html">Error 405</a></li>
-                <li><a href="error500.html">Error 500</a></li>
-            </ul>
-        </li>
-        <li class="content"><span>Monthly Bandwidth Transfer</span>
-            <div class="progress progress-mini progress-danger active progress-striped">
-                <div style="width: 77%;" class="bar"></div>
-            </div>
-            <span class="percent">77%</span>
-            <div class="stat">21419.94 / 14000 MB</div>
-        </li>
-        <li class="content"><span>Disk Space Usage</span>
-            <div class="progress progress-mini active progress-striped">
-                <div style="width: 87%;" class="bar"></div>
-            </div>
-            <span class="percent">87%</span>
-            <div class="stat">604.44 / 4000 MB</div>
-        </li>
+        <li><a href="#"><i class="icon icon-signal"></i> <span>创建房间</span></a></li>
     </ul>
 </div>
 <div id="content">
     <div id="content-header">
-        <div id="breadcrumb"><a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a
-                href="#">Sample pages</a> <a href="#" class="current">Chat option</a></div>
-        <h1>Chat option</h1>
+        <div id="breadcrumb"><a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
+        <h1 id="chat-id">Chat option</h1>
     </div>
     <div class="container-fluid">
         <hr>
@@ -120,21 +72,10 @@
                     <div class="widget-content nopadding">
                         <div class="chat-users panel-right2">
                             <div class="panel-title">
-                                <h5>Online Users</h5>
+                                <h5>Users</h5>
                             </div>
                             <div class="panel-content nopadding">
                                 <ul class="contact-list">
-                                    <!--<li id="user-Alex" class="online"><a href="#"><img alt="" src="img/demo/av1.jpg"/>-->
-                                        <!--<span>Alex</span></a></li>-->
-                                    <!--<li id="user-Linda"><a href="#"><img alt="" src="img/demo/av2.jpg"/>-->
-                                        <!--<span>Linda</span></a></li>-->
-                                    <!--<li id="user-John" class="online new"><a href="#"><img alt=""-->
-                                                                                           <!--src="img/demo/av3.jpg"/>-->
-                                        <!--<span>John</span></a><span class="msg-count badge badge-info">3</span></li>-->
-                                    <!--<li id="user-Mark" class="online"><a href="#"><img alt="" src="img/demo/av4.jpg"/>-->
-                                        <!--<span>Mark</span></a></li>-->
-                                    <!--<li id="user-Maxi" class="online"><a href="#"><img alt="" src="img/demo/av5.jpg"/>-->
-                                        <!--<span>Maxi</span></a></li>-->
                                 </ul>
                             </div>
                         </div>
@@ -144,9 +85,9 @@
                             </div>
                             <div class="chat-message well">
                                 <button class="btn btn-success">Send</button>
-                <span class="input-box">
-                <input type="text" name="msg-box" id="msg-box"/>
-                </span></div>
+                            <span class="input-box">
+                            <input type="text" name="msg-box" id="msg-box"/>
+                            </span></div>
                         </div>
                     </div>
                 </div>
@@ -154,75 +95,53 @@
         </div>
     </div>
 </div>
-
 <div class="row-fluid">
-    <div id="footer" class="span12"> 2013 &copy; Matrix Admin. Brought to you by <a href="http://themedesigner.in/">Themedesigner.in</a>
+    <div id="footer" class="span12"><a href="https://github.com/BinaryVinc/vserver/tree/chat-room">github@BinaryVinc</a>
     </div>
 </div>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.ui.custom.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/matrix.js"></script>
-<!--<script src="js/matrix.chat.js"></script>-->
 <script src="js/common.js"></script>
 <script src="js/cool.js"></script>
 <script>
+
+
     $(function () {
 
-//        cool.room.create({name:"it"},function (msgSet) {
-//            console.log(msgSet)
-//        })
-
-//        var data = {name:"jack",gender:1};
-//        cool.user.auth(data, function (msgSet) {
-//            console.log(msgSet);
-//        })
-
-
-        var msg_template = '<p><span class="msg-block"><strong></strong><span class="time"></span><span class="msg"></span></span></p>';
+        cool.room.list({}, function (msg) {
+            var json = JSON.parse(msg);
+            if (!json.res)
+                return;
+            var rrids = json.res;
+            var li = '';
+            for (var j = 0; j < rrids.length; j++) {
+                var rn = rrids[j].split("_");
+                li += '<li><a href="chat.html?rid=' + rn[0] + '"  id="room_' + rn[0] + '"><i class="icon icon-signal"></i> <span>' + rn[1] + '</span></a></li>';
+            }
+            $("#sidebar ul").append(li);
+        })
 
         $('.chat-message button').click(function () {
             var input = $(this).siblings('span').children('input[type=text]');
             if (input.val() != '') {
                 websocket.send(input.val());
-//                add_message('You','img/demo/av1.jpg',input.val(),true);
             }
         });
 
-//        $('.chat-message input').keypress(function(e){
-//            if(e.which == 13) {
-//                if($(this).val() != ''){
-//                    websocket.send($(this).val());
-////                    add_message('You','img/demo/av1.jpg',$(this).val(),true);
-//                }
-//            }
-//        });
+        $('.chat-message input').keypress(function (e) {
+            if (e.which == 13) {
+                if ($(this).val() != '') {
+                    websocket.send($(this).val());
+                }
+            }
+        });
 
-//        setTimeout(function(){
-//            add_message('Linda','img/demo/av2.jpg','Hello Every one do u want to freindship with me?')
-//        },'1000');
-//        setTimeout(function(){
-//            add_message('Mark','img/demo/av3.jpg','Yuppi! why not sirji!!.')
-//        },'4000');
-//        setTimeout(function(){
-//            add_message('Linda','img/demo/av2.jpg','Thanks!!! See you soon than')
-//        },'8000');
-//        setTimeout(function(){
-//            add_message('Mark','img/demo/av3.jpg','ok Bye than!!!.')
-//        },'12000');
-//        setTimeout(function(){
-//            remove_user('Linda','Linda')
-//        },'16000');
         var i = 0;
-
         function add_message(name, img, msg, clear, date) {
             i = i + 1;
             var inner = $('#chat-messages-inner');
-//            var time = new Date();
-//            var hours = time.getHours();
-//            var minutes = time.getMinutes();
-//            if (hours < 10) hours = '0' + hours;
-//            if (minutes < 10) minutes = '0' + minutes;
             if (!date)
                 date = '';
             var id = 'msg-' + i;
@@ -230,102 +149,112 @@
             inner.append('<p id="' + id + '" class="user-' + idname + '">'
                     + '<span class="msg-block"><img src="' + img + '" alt="" /><strong>' + name + '</strong> <span class="time"> ' + date + '</span>'
                     + '<span class="msg">' + msg + '</span></span></p>');
-            $('#' + id).hide().fadeIn(800);
+            $('#' + id).hide().fadeIn(80);
             if (clear) {
                 $('.chat-message input').val('').focus();
             }
-            $('#chat-messages').animate({scrollTop: inner.height()}, 1000);
+            $('#chat-messages').animate({scrollTop: inner.height()}, 100);
         }
 
         function remove_user(userid, name) {
             i = i + 1;
-            $('.contact-list li#user-' + userid).addClass('offline').delay(1000).slideUp(800, function () {
-                $(this).remove();
-            });
             var inner = $('#chat-messages-inner');
             var id = 'msg-' + i;
-            inner.append('<p class="offline" id="' + id + '"><span>User ' + name + ' left the chat</span></p>');
-            $('#' + id).hide().fadeIn(800);
+            inner.append('<p class="offline" id="' + id + '"><span>' + name + ' left</span></p>');
+            $('#chat-messages').animate({scrollTop: inner.height()}, 100);
         }
 
         function add_user(userid, name, img) {
             i = i + 1;
-
-            var ulist = '<li id="user-"+'+userid+' class="online"><a href="#"><img alt="" src="'+img+'"/><span>'+name+'</span></a></li>'
-
-            $('.contact-list').append(ulist);
-
-//            $('.contact-list li#user-' + userid).addClass('offline').delay(1000).slideUp(800, function () {
-//                $(this).remove();
-//            });
-//            var inner = $('#chat-messages-inner');
-//            var id = 'msg-' + i;
-//            inner.append('<p class="offline" id="' + id + '"><span>User ' + name + ' left the chat</span></p>');
-//            $('#' + id).hide().fadeIn(800);
+            var inner = $('#chat-messages-inner');
+            var id = 'msg-' + i;
+            console.log(id)
+            inner.append('<p class="offline" id="' + id + '"><span>' + name + ' join</span></p>');
+            $('#chat-messages').animate({scrollTop: inner.height()}, 100);
         }
+
+        var roomid = gqs("rid");
+        cool.room.olds({rid: roomid}, function (msg) {
+            var oldmsg = JSON.parse(msg).res;
+            for (var j = oldmsg.length -1 ; j > 0; j--) {
+                var old = JSON.parse(oldmsg[j]);
+                if(old.oper == 1 || old.oper == 2)
+                        continue;
+                var img = old.gender == 0 ? 'img/demo/av3.jpg' : 'img/demo/av4.jpg'
+                add_message(old.uname, img, old.msg, true, old.dateStr);
+            }
+        });
 
         var websocket = null;
-        //判断当前浏览器是否支持WebSocket
-        if ('WebSocket' in window) {
-            websocket = new WebSocket("ws://127.0.0.1:8080/ws?rid=" + -1660492593 + "&uid=" + -373118128);
-        } else {
-            alert('当前浏览器 Not support websocket')
-        }
-
-        //连接发生错误的回调方法
-        websocket.onerror = function () {
-//            setMessageInnerHTML("WebSocket连接发生错误");
-        };
-
-        //连接成功建立的回调方法
-        websocket.onopen = function (data1) {
-//            setMessageInnerHTML("进入房间");
-        }
-
-        //接收到消息的回调方法
-        websocket.onmessage = function (event) {
-            var msg = JSON.parse(event.data);
-            var img = msg.gender == 0 ? 'img/demo/av3.jpg' : 'img/demo/av4.jpg'
-            add_message(msg.uname, img, msg.msg, true, msg.date);
-
-            if(msg.oper == 1){
-                add_user(msg.uid,msg.uname,img);
-            }
-            if(msg.oper == 2){
-
+        cool.room.get({rid: roomid}, function (msg) {
+            var json = JSON.parse(msg).res;
+            $("#chat-id").html(json.rname)
+            $("#room_" + roomid).parent().addClass("active");
+            if ('WebSocket' in window) {
+                websocket = new WebSocket("ws://127.0.0.1:8080/ws?rid=" + roomid);
+            } else {
+                alert('当前浏览器 Not support websocket')
             }
 
+            websocket.onerror = function () {
+                console.log("websocket error.")
+            };
 
+            websocket.onopen = function () {
+                console.log("websocket open.")
+            }
+
+            //接收到消息的回调方法
+            websocket.onmessage = function (event) {
+                var msg = JSON.parse(event.data);
+
+                var img = msg.gender == 0 ? 'img/demo/av3.jpg' : 'img/demo/av4.jpg'
+                if (msg.oper == 0) {
+                    add_message(msg.uname, img, msg.msg, true, msg.dateStr);
+                }
+                if (msg.oper == 1) {
+                    var ulist = msg.uList;
+                    var inner = $('.contact-list');
+                    inner.html('');
+                    var lis = '';
+                    for (var j = 0; j < ulist.length; j++) {
+                        var user = JSON.parse(ulist[j]);
+                        var imgU = user.gender == 0 ? 'img/demo/av3.jpg' : 'img/demo/av4.jpg'
+                        lis += '<li id="user-' + user.id + '" class="online"><a href="#"><img alt="" src="' + imgU + '"/><span>' + user.name + '</span></a></li>';
+                    }
+                    inner.append(lis);
+                    add_user(msg.uid, msg.uname, img);
+                }
+                if (msg.oper == 2) {
+                    remove_user(msg.uid, msg.uname, img);
+
+                }
+            }
+
+            websocket.onclose = function () {
+                console.log("websocket close.")
+            }
+
+            window.onbeforeunload = function () {
+                console.log("window onbeforeunload.")
+                closeWebSocket();
+            }
+
+            function closeWebSocket() {
+                websocket.close();
+            }
+        })
+
+        function gqs(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null)return unescape(r[2]);
+            return null;
         }
-
-        //连接关闭的回调方法
-        websocket.onclose = function () {
-//            setMessageInnerHTML("离开房间");
-        }
-
-        //监听窗口关闭事件，当窗口关闭时，主动去关闭websocket连接，防止连接还没断开就关闭窗口，server端会抛异常。
-        window.onbeforeunload = function () {
-            closeWebSocket();
-        }
-
-        //将消息显示在网页上
-//        function setMessageInnerHTML(innerHTML) {
-//            add_message('You', 'img/demo/av1.jpg', innerHTML, true);
-////            document.getElementById('message').innerHTML += innerHTML + '<br/>';
-//        }
-
-        //关闭WebSocket连接
-        function closeWebSocket() {
-            websocket.close();
-        }
-
-        //发送消息
-        function send() {
-            var message = document.getElementById('text').value;
-            websocket.send(message);
-        }
-
     })
+
+
+
 
 </script>
 </body>

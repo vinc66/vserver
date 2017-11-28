@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>login</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css"/>
+    <link rel="stylesheet" href="css/matrix-login.css"/>
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet"/>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div id="loginbox">
+    <form id="loginform" class="form-vertical">
+        <div class="control-group">
+            <div class="controls">
+                <div class="main_input_box">
+                    <input type="text" id="nickname" placeholder="Username"/>
+                </div>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <div class="main_input_box">
+                    <span class="pull-center"><a href="#" class="flip-link btn btn-info" val="1"
+                                                 id="to-male">male</a></span>
+                    <span class="pull-center"><a href="#" class="flip-link btn btn-info" val="0" id="to-femal">femal</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-actions">
+        </div>
+    </form>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/cool.js"></script>
+<script>
+    $(function () {
+
+        $(".flip-link").click(function () {
+            if (!$("#nickname").val())
+                return;
+            cool.user.auth({name: $("#nickname").val(), gender: $(this).attr("val")}, function (msg) {
+                var msg = JSON.parse(msg);
+                if (msg.error_code == 0)
+                    location.href = "chat.html?rid=1"
+            })
+
+
+        })
+
+
+    })
+
+</script>
+</body>
+
+</html>

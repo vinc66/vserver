@@ -22,6 +22,8 @@ APP = {
                     return;
                 }
                 if (typeof options.cb == "function") {
+                    if(json.error_code == -1)
+                        location.href = "login.html";
                     options.cb(json);
                     return;
                 }
@@ -35,6 +37,4 @@ APP = {
         });
 
     }
-
-
 }

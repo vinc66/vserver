@@ -26,13 +26,13 @@
 
     <!--<bean class="org.springframework.web.servlet.view.XmlViewResolver" p:location="classpath:spring-views.xml"/>-->
 
-    <!--<mvc:interceptors>-->
-        <!--<mvc:interceptor>-->
-            <!--<mvc:mapping patcooluser/**"/>-->
-            <!--<mvc:mapping path="/admin/**"/>-->
-            <!--<bean clacn.vinc.web.interceptorptor.SessionInterceptor"/>-->
-        <!--</mvc:interceptor>-->
-    <!--</mvc:interceptors>-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/api/**"/>
+            <mvc:exclude-mapping path="/api/user/auth"/>
+            <bean class="cn.vinc.web.interceptor.SessionInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
     <!-- <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"
              p:validationMessageSource-ref="messageSource"
