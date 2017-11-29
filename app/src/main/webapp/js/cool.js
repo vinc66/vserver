@@ -45,7 +45,8 @@ cool = {
         olds:function(data,callback){
             APP.request({
                 url:cool.host+"/room/olds",
-                data:JSON.stringify(data),
+                contentType: "application/x-www-form-urlencoded",
+                data:data,
                 cb:function(json){
                     callback(json);
                 }
